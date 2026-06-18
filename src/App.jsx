@@ -61,6 +61,8 @@ function App() {
           className="hero-video"
           src="/hero.mp4"
           muted
+          autoPlay
+          loop
           playsInline
           preload="auto"
         />
