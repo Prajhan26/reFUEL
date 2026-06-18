@@ -1,12 +1,9 @@
-import { useState, useRef, useEffect } from 'react'
-
+import { useRef, useEffect } from 'react'
 import './App.css'
 
-const PILLS = ['Returning client', 'New to FUEL', 'Just curious']
 const SENSITIVITY = 0.8
 
 function App() {
-  const [selected, setSelected] = useState(null)
   const videoRef = useRef(null)
   const prevX = useRef(null)
   const targetTime = useRef(0)
@@ -67,27 +64,6 @@ function App() {
           playsInline
           preload="auto"
         />
-        {/* Left column */}
-        <div className="hero-left">
-          {/* Selection question */}
-          <div className="selection-area">
-            <p className="selection-question">What brings you here?</p>
-            <div className="pill-row">
-              {PILLS.map((pill) => (
-                <button
-                  key={pill}
-                  className={`pill ${selected === pill ? 'pill--selected' : ''}`}
-                  onClick={() => setSelected(selected === pill ? null : pill)}
-                >
-                  {pill}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Right column — blank */}
-        <div className="hero-right" />
       </main>
     </div>
   )
