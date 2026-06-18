@@ -36,10 +36,15 @@ function App() {
       if (!isSeeking.current) seekTo(targetTime.current)
     }
 
-    video.playbackRate = 0.6
+    function setRate() { video.playbackRate = 0.6 }
+    setRate()
+    video.addEventListener('play', setRate)
+    video.addEventListener('ratechange', setRate)
     video.addEventListener('seeked', onSeeked)
     window.addEventListener('mousemove', onMouseMove)
     return () => {
+      video.removeEventListener('play', setRate)
+      video.removeEventListener('ratechange', setRate)
       video.removeEventListener('seeked', onSeeked)
       window.removeEventListener('mousemove', onMouseMove)
     }
