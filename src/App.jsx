@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import './App.css'
 
 const PILLS = ['Returning client', 'New to FUEL', 'Just curious']
-const SENSITIVITY = 0.4 // 0.5x speed: half of 0.8
+const SENSITIVITY = 0.8
 
 function App() {
   const [selected, setSelected] = useState(null)
