@@ -17,20 +17,10 @@
   background: #FFFFFF;
 }
 
-.nav-wordmark {
-  font-size: 22px;
-  letter-spacing: -0.5px;
-  user-select: none;
-}
-
-.wordmark-re {
-  color: #888888;
-  font-weight: 400;
-}
-
-.wordmark-fuel {
-  color: #0D0D0D;
-  font-weight: 700;
+.nav-logo {
+  height: 36px;
+  width: auto;
+  display: block;
 }
 
 

@@ -56,10 +56,15 @@ function App() {
     <div className="page">
       {/* Navbar */}
       <nav className="navbar">
-        <div className="nav-wordmark">
-          <span className="wordmark-re">re</span>
-          <span className="wordmark-fuel">FUEL</span>
-        </div>
+        <svg className="nav-logo" viewBox="0 0 320 80" xmlns="http://www.w3.org/2000/svg">
+          <text x="0"  y="62" fontFamily="Georgia, 'Times New Roman', serif" fontSize="72" fill="#3a5240" letterSpacing="2">F</text>
+          <line x1="68" y1="8" x2="68" y2="72" stroke="#3a5240" strokeWidth="2.5"/>
+          <text x="80" y="62" fontFamily="Georgia, 'Times New Roman', serif" fontSize="72" fill="#3a5240" letterSpacing="2">U</text>
+          <line x1="158" y1="8" x2="158" y2="72" stroke="#3a5240" strokeWidth="2.5"/>
+          <text x="170" y="62" fontFamily="Georgia, 'Times New Roman', serif" fontSize="72" fill="#3a5240" letterSpacing="2">E</text>
+          <line x1="240" y1="8" x2="240" y2="72" stroke="#3a5240" strokeWidth="2.5"/>
+          <text x="252" y="62" fontFamily="Georgia, 'Times New Roman', serif" fontSize="72" fill="#3a5240" letterSpacing="2">L</text>
+        </svg>
       </nav>
 
       {/* Hero */}
