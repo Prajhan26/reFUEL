@@ -74,6 +74,10 @@ function App() {
           playsInline
           preload="auto"
         />
+        <div className="hero-text">
+          <h1 className="hero-headline">COMPRESSING<br />THE FRONTIER.</h1>
+          <p className="hero-sub">Rethinking architecture. Reclaiming compute.</p>
+        </div>
       </main>
     </div>
   )
