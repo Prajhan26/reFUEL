@@ -80,7 +80,7 @@ function App() {
           preload="auto"
         />
         <div className="hero-text">
-          <h1 className="hero-headline">COMPRESSING<br />THE FRONTIER.</h1>
+          <h1 className="hero-headline">Democratizing Frontier AI for the Edge.</h1>
           <p className="hero-sub">Rethinking architecture. Reclaiming compute.</p>
         </div>
       </main>
