@@ -82,6 +82,7 @@ function App() {
         <div className="hero-text">
           <h1 className="hero-headline">Democratizing Frontier AI for the Edge.</h1>
           <p className="hero-sub">Rethinking architecture. Reclaiming compute.</p>
+          <button className="btn-waitlist">Join the Waitlist</button>
         </div>
       </main>
     </div>

@@ -59,6 +59,27 @@
   margin-bottom: 20px;
 }
 
+.btn-waitlist {
+  margin-top: 28px;
+  display: inline-block;
+  background: transparent;
+  color: #FFFFFF;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  border-radius: 999px;
+  padding: 14px 32px;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: inherit;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.btn-waitlist:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #FFFFFF;
+}
+
 .hero-sub {
   font-size: clamp(14px, 1.4vw, 18px);
   font-weight: 300;
