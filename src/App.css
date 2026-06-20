@@ -88,6 +88,132 @@
 }
 
 
+/* ── Modal ── */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 16px;
+  padding: 48px;
+  width: 100%;
+  max-width: 440px;
+  position: relative;
+}
+
+.modal-x {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #888;
+  cursor: pointer;
+}
+
+.modal-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #3a5240;
+  margin-bottom: 12px;
+}
+
+.modal-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0D0D0D;
+  margin-bottom: 8px;
+}
+
+.modal-sub {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 32px;
+  line-height: 1.5;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.modal-input {
+  border: 1.5px solid #E0E0E0;
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+  color: #0D0D0D;
+}
+
+.modal-input:focus {
+  border-color: #3a5240;
+}
+
+.modal-submit {
+  margin-top: 6px;
+  background: #3a5240;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.modal-submit:hover {
+  opacity: 0.88;
+}
+
+.modal-success {
+  text-align: center;
+  padding: 16px 0;
+}
+
+.modal-success-icon {
+  font-size: 36px;
+  color: #3a5240;
+  margin-bottom: 16px;
+}
+
+.modal-success h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.modal-success p {
+  color: #666;
+  margin-bottom: 28px;
+}
+
+.modal-close {
+  background: none;
+  border: 1.5px solid #E0E0E0;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .navbar {

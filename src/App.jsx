@@ -1,9 +1,12 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import './App.css'
 
 const SENSITIVITY = 0.8
 
 function App() {
+  const [modal, setModal] = useState(false)
+  const [form, setForm] = useState({ name: '', email: '' })
+  const [submitted, setSubmitted] = useState(false)
   const videoRef = useRef(null)
   const prevX = useRef(null)
   const targetTime = useRef(0)
@@ -82,9 +85,49 @@ function App() {
         <div className="hero-text">
           <h1 className="hero-headline">Democratizing Frontier AI for the Edge.</h1>
           <p className="hero-sub">Rethinking architecture. Reclaiming compute.</p>
-          <button className="btn-waitlist">Join the Waitlist</button>
+          <button className="btn-waitlist" onClick={() => setModal(true)}>Join the Waitlist</button>
         </div>
       </main>
+      {modal && (
+        <div className="modal-backdrop" onClick={() => { setModal(false); setSubmitted(false) }}>
+          <div className="modal" onClick={e => e.stopPropagation()}>
+            {submitted ? (
+              <div className="modal-success">
+                <p className="modal-success-icon">✓</p>
+                <h2>You're on the list.</h2>
+                <p>We'll reach out when it's your turn.</p>
+                <button className="modal-close" onClick={() => { setModal(false); setSubmitted(false) }}>Close</button>
+              </div>
+            ) : (
+              <>
+                <button className="modal-x" onClick={() => setModal(false)}>✕</button>
+                <p className="modal-eyebrow">Early Access</p>
+                <h2 className="modal-title">Join the Waitlist</h2>
+                <p className="modal-sub">Be the first to access reFUEL when we launch.</p>
+                <form className="modal-form" onSubmit={e => { e.preventDefault(); setSubmitted(true) }}>
+                  <input
+                    className="modal-input"
+                    type="text"
+                    placeholder="Your name"
+                    required
+                    value={form.name}
+                    onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
+                  />
+                  <input
+                    className="modal-input"
+                    type="email"
+                    placeholder="Your email"
+                    required
+                    value={form.email}
+                    onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
+                  />
+                  <button className="modal-submit" type="submit">Request Access</button>
+                </form>
+              </>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   )
 }
