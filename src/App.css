@@ -125,7 +125,7 @@ html, body, #root {
 }
 
 .thesis-body {
-  font-size: clamp(14px, 1.3vw, 18px);
+  font-size: clamp(18px, 1.8vw, 24px);
   font-weight: 300;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.75);
