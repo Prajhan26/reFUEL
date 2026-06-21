@@ -83,11 +83,19 @@ function App() {
           preload="auto"
         />
         <div className="hero-text">
-          <h1 className="hero-headline">Democratizing Frontier AI for the Edge.</h1>
+          <h1 className="hero-headline">Fueling the Edge.<br />Localizing the Frontier.</h1>
           <p className="hero-sub">Rethinking architecture. Reclaiming compute.</p>
           <button className="btn-waitlist" onClick={() => setModal(true)}>Join the Waitlist</button>
         </div>
       </main>
+      {/* Body — The Thesis */}
+      <section className="thesis">
+        <p className="thesis-label">The Thesis</p>
+        <p className="thesis-body">
+          Frontier AI is currently trapped in the cloud. It remains expensive, inaccessible, and fundamentally non-private for emerging markets, rural communities, and secure environments. Meanwhile, standard small models lack the reasoning depth to be truly useful. The current paradigm is broken.
+        </p>
+      </section>
+
       {modal && (
         <div className="modal-backdrop" onClick={() => { setModal(false); setSubmitted(false) }}>
           <div className="modal" onClick={e => e.stopPropagation()}>

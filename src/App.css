@@ -88,6 +88,30 @@
 }
 
 
+/* ── Thesis ── */
+.thesis {
+  background: #FFFFFF;
+  padding: 120px 64px;
+  max-width: 820px;
+}
+
+.thesis-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #3a5240;
+  margin-bottom: 32px;
+}
+
+.thesis-body {
+  font-size: clamp(20px, 2.2vw, 28px);
+  font-weight: 400;
+  line-height: 1.65;
+  color: #1a1a1a;
+  letter-spacing: -0.01em;
+}
+
 /* ── Modal ── */
 .modal-backdrop {
   position: fixed;
