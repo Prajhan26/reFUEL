@@ -1,37 +1,41 @@
-/* ── Reset ── */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ── Page shell ── */
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+}
+
 .page {
-  background: #FFFFFF;
-  color: #0D0D0D;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ── Navbar ── */
 .navbar {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 50;
+  z-index: 10;
   display: flex;
   align-items: center;
-  padding: 0 64px;
+  padding: 0 56px;
   height: 72px;
-  background: #FFFFFF;
 }
 
 .nav-logo {
-  height: 36px;
+  height: 32px;
   width: auto;
   display: block;
+  filter: brightness(0) invert(1);
 }
 
-/* ── Hero ── */
+/* ── Hero (full page) ── */
 .hero {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -45,17 +49,28 @@
   z-index: 0;
 }
 
-/* Hero text */
-.hero-text {
+/* Two-column content over video */
+.hero-content {
   position: absolute;
-  left: 64px;
-  bottom: 72px;
+  inset: 0;
   z-index: 1;
-  max-width: 680px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+  padding: 0 56px 72px;
+  padding-top: 72px;
+}
+
+/* Left — headline */
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 0;
 }
 
 .hero-headline {
-  font-size: clamp(42px, 5.5vw, 80px);
+  font-size: clamp(36px, 4.8vw, 72px);
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.03em;
@@ -64,21 +79,22 @@
 }
 
 .hero-sub {
-  font-size: clamp(14px, 1.4vw, 18px);
+  font-size: clamp(13px, 1.2vw, 16px);
   font-weight: 300;
   letter-spacing: 0.04em;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 28px;
 }
 
 .btn-waitlist {
-  margin-top: 28px;
   display: inline-block;
+  align-self: flex-start;
   background: transparent;
   color: #FFFFFF;
-  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
   border-radius: 999px;
-  padding: 14px 32px;
-  font-size: 15px;
+  padding: 13px 28px;
+  font-size: 14px;
   font-weight: 500;
   font-family: inherit;
   letter-spacing: 0.04em;
@@ -87,32 +103,33 @@
 }
 
 .btn-waitlist:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.1);
   border-color: #FFFFFF;
 }
 
-/* ── Thesis ── */
-.thesis {
-  background: #FFFFFF;
-  padding: 140px 64px;
-  max-width: 860px;
+/* Right — thesis */
+.hero-right {
+  padding-left: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .thesis-label {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: #3a5240;
-  margin-bottom: 36px;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 20px;
 }
 
 .thesis-body {
-  font-size: clamp(22px, 2.4vw, 30px);
-  font-weight: 400;
-  line-height: 1.6;
-  color: #1a1a1a;
-  letter-spacing: -0.01em;
+  font-size: clamp(14px, 1.3vw, 18px);
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.01em;
 }
 
 /* ── Modal ── */
@@ -187,9 +204,7 @@
   color: #0D0D0D;
 }
 
-.modal-input:focus {
-  border-color: #3a5240;
-}
+.modal-input:focus { border-color: #3a5240; }
 
 .modal-submit {
   margin-top: 6px;
@@ -241,7 +256,13 @@
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
+  html, body, #root { overflow: auto; }
+  .hero-content {
+    grid-template-columns: 1fr;
+    padding: 88px 24px 48px;
+    gap: 48px;
+    align-items: start;
+  }
+  .hero-right { padding-left: 0; }
   .navbar { padding: 0 24px; }
-  .hero-text { left: 24px; bottom: 40px; }
-  .thesis { padding: 80px 24px; }
 }
